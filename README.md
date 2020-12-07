@@ -4,7 +4,7 @@
 
 ## Caso:
 
-: tijera
+A: tijera
 B: papel
 1 - 0
 
