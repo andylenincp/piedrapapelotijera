@@ -10,7 +10,7 @@ print("")
 contador1 = 0
 contador2 = 0
 
-#Bucle infinito para repetir el proceso hasta romperlo
+#Bucle que repetirá el proceso mientras se produzca una excepción
 while True:
 
 	#Bloque para el manejo de excepciones
@@ -19,7 +19,7 @@ while True:
 		#Declaramos la variable que guarda el mensaje de la ronda
 		mensaje = ""
 
-		#Bucle infinito para repetir el proceso hasta romperlo
+		#Bucle que repetirá el proceso mientras J1 no realice un ingreso correcto
 		while True:
 
 			#Solicitamos al jugador uno que ingrese su elección
@@ -33,7 +33,7 @@ while True:
 			else:
 				break
 
-		#Bucle infinito para repetir el proceso hasta romperlo
+		#Bucle que repetirá el proceso mientras J2 no realice un ingreso correcto
 		while True:
 
 			#Solicitamos al jugador dos que ingrese su elección
@@ -47,25 +47,25 @@ while True:
 			else:
 				break
 
-		#Si el ingreso de ambos jugadores es el mismo se establece como empate
+		#Si el ingreso de ambos jugadores es igual se considera empate
 		if (jugador1 == jugador2):
 			mensaje = "Empate"
 
-		#Si J1 elije piedra y J2 tijera o J1 elije papel y J2 piedra o J1 elije tijera y J2 papel el ganador de la ronda es el jugador uno
+		#Si J1 elije piedra y J2 tijera o J1 elije papel y J2 piedra o J1 elije tijera y J2 papel el ganador de la ronda es J1
 		elif ((jugador1 == "piedra" and jugador2 == "tijera") or (jugador1 == "papel" and jugador2 == "piedra") or (jugador1 == "tijera" and jugador2 == "papel")):
 			mensaje = "J1 gana ronda"
 
 			#Se aumenta en uno el contador de J1
-			contador1 = int(contador1) + 1
+			contador1 += 1
 		
-		#Caso contrario el ganador de la ronda es el jugador dos
+		#Caso contrario el ganador de la ronda es J2
 		else:
 			mensaje = "J2 gana ronda"
 
-			#Se aumenta en uno el contado de J2
-			contador2 = int(contador2) + 1
+			#Se aumenta en uno el contador de J2
+			contador2 += 1
 		
-		#Mostramos el mensaje de la ronda y el marcador
+		#Mostramos el mensaje del ganador de la ronda y el marcador general
 		print(mensaje)
 		print("Marcador: " + str(contador1) + " - " + str(contador2))
 
@@ -75,7 +75,7 @@ while True:
 			print("J1 gana el juego")
 			break
 		
-		#si el contador de J2 es mayor al contador de J1 y el contador de J2 es mayor o igual a 3
+		#Si el contador de J2 es mayor al contador de J1 y el contador de J2 es mayor o igual a 3
 		#El ganador es el jugador dos y se rompe el bucle
 		elif (int(contador2) > int(contador1) and int(contador2) >= 3):
 			print("J2 gana el juego")
